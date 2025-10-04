@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Plumberz - Free Plumbing Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <style>
+    /* ====== THEME (unchanged) ====== */
+    :root {
+      --gradient: linear-gradient(135deg, #7e0ee6, #b309b9, #0f6cb1, #1c83cd);
+      --card-bg: #fff;
+
+      /* Control equal sizing here */
+      --card-height: 480px; /* total card height */
+      --media-height: 280px; /* image area height */
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: bold;
+    }
+
+    /* ====== CARD (kept your gradient border) ====== */
+    .card-box {
+      border: 2px solid transparent;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--card-bg);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+
+      /* Gradient border trick preserved */
+      background-image: linear-gradient(var(--card-bg), var(--card-bg)),
+        var(--gradient);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+
+      /* Equal height setup */
+      height: var(--card-height);
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .card-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Keep Bootstrap columns equal widths; ensure columns stretch equally */
+    .row.g-4 > [class*="col-"] {
+      display: flex;
+    }
+    .row.g-4 > [class*="col-"] > .card-box {
+      width: 100%;
+    }
+
+    /* ====== MEDIA AREA (consistent height & contain image) ====== */
+    .card-box .overflow-hidden {
+      height: var(--media-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card-bg);
+    }
+
+    .card-box .overflow-hidden img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ====== FOOTER (kept your gradient border) ====== */
+    .card-footer {
+      background: var(--card-bg);
+      border-top: 2px solid transparent;
+      background-image: linear-gradient(var(--card-bg), var(--card-bg)),
+        var(--gradient);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+
+      /* stick footer to bottom consistently */
+      margin-top: auto;
+      width: 100%;
+    }
+
+    /* Optional: keep button links from wrapping oddly on small screens */
+    .card-footer .d-flex.gap-5 a {
+      white-space: nowrap;
+    }
+
+    /* Responsive tweak: reduce media height on smaller screens */
+    @media (max-width: 575.98px) {
+      :root {
+        --card-height: 440px;
+        --media-height: 240px;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 py-5">
+      <div class="container">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">
+          Contact Us
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb text-uppercase">
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Pages</a>
+            </li>
+            <li class="breadcrumb-item text-white active" aria-current="page">
+              Contact
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Products Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <!-- Section Title -->
+        <h1 class="text-center gradient-text mb-5">Our Products</h1>
+
+        <div class="row g-4">
+          <!-- Formal Shoes -->
+          <div
+            class="col-lg-4 col-md-6 service-item-top wow fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <div class="card-box">
+              <!-- Card Image -->
+              <div class="overflow-hidden">
+                <img
+                  class="img-fluid w-100"
+                  src="img/nikesingle.jpeg"
+                  alt="Formal Shoes"
+                  style="object-fit: cover"
+                />
+              </div>
+
+              <!-- Card Footer -->
+              <div
+                class="card-footer d-flex flex-column align-items-center justify-content-between p-4"
+              >
+                <!-- Card Title -->
+                <h5 class="gradient-text text-truncate me-3 mb-0">Nike</h5>
+
+                <!-- Buttons -->
+                <div class="d-flex gap-5 mt-2">
+                  <a
+                    href="#"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Enquiry</a
+                  >
+
+                  <a
+                    href="nike.html"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Details</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sports Shoes -->
+          <div
+            class="col-lg-4 col-md-6 service-item-top wow fadeInUp"
+            data-wow-delay="0.2s"
+          >
+            <div class="card-box">
+              <div class="overflow-hidden">
+                <img
+                  class="img-fluid w-100"
+                  src="img/sports-shoes_1.jpg"
+                  alt="Asics"
+                />
+              </div>
+              <div
+                class="card-footer d-flex flex-column align-items-center justify-content-between p-4"
+              >
+                <h5 class="gradient-text text-truncate me-3 mb-0">Asics</h5>
+                <div class="d-flex gap-5 mt-2">
+                  <a
+                    href="#"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Enquiry</a
+                  >
+                  <a
+                    href="Asics.html"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Details</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sneakers -->
+          <div
+            class="col-lg-4 col-md-6 service-item-top wow fadeInUp"
+            data-wow-delay="0.3s"
+          >
+            <div class="card-box">
+              <div class="overflow-hidden">
+                <img
+                  class="img-fluid w-100"
+                  src="img/sneakers.jpg"
+                  alt="Adidas"
+                />
+              </div>
+              <div
+                class="card-footer d-flex flex-column align-items-center justify-content-between p-4"
+              >
+                <h5 class="gradient-text text-truncate me-3 mb-0">Adidas</h5>
+                <div class="d-flex gap-5 mt-2">
+                  <a
+                    href="#"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Enquiry</a
+                  >
+                  <a
+                    href="adidas.html"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Details</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Branded Shoes -->
+          <div
+            class="col-lg-4 col-md-6 service-item-top wow fadeInUp"
+            data-wow-delay="0.4s"
+          >
+            <div class="card-box">
+              <div class="overflow-hidden">
+                <img
+                  class="img-fluid w-100"
+                  src="img/puma-shoe.jpg"
+                  alt="Branded Shoes"
+                />
+              </div>
+              <div
+                class="card-footer d-flex flex-column align-items-center justify-content-between p-4"
+              >
+                <h5 class="gradient-text text-truncate me-3 mb-0">
+                  Puma Shoes
+                </h5>
+                <div class="d-flex gap-5 mt-2">
+                  <a
+                    href="#"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Enquiry</a
+                  >
+                  <a
+                    href="puma.html"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Details</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Boots -->
+          <div
+            class="col-lg-4 col-md-6 service-item-top wow fadeInUp"
+            data-wow-delay="0.5s"
+          >
+            <div class="card-box">
+              <div class="overflow-hidden">
+                <img
+                  class="img-fluid w-100"
+                  src="img/crocs-shoe.webp"
+                  alt="Crocs"
+                />
+              </div>
+              <div
+                class="card-footer d-flex flex-column align-items-center justify-content-between p-4"
+              >
+                <h5 class="gradient-text text-truncate me-3 mb-0">Crocs</h5>
+                <div class="d-flex gap-5 mt-2">
+                  <a
+                    href="#"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Enquiry</a
+                  >
+                  <a
+                    href="crocs.html"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Details</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spikes Shoes -->
+          <div
+            class="col-lg-4 col-md-6 service-item-top wow fadeInUp"
+            data-wow-delay="0.6s"
+          >
+            <div class="card-box">
+              <div class="overflow-hidden">
+                <img
+                  class="img-fluid w-100"
+                  src="img/spikeshoes.jpg"
+                  alt="Spikes Shoes"
+                />
+              </div>
+              <div
+                class="card-footer d-flex flex-column align-items-center justify-content-between p-4"
+              >
+                <h5 class="gradient-text text-truncate me-3 mb-0">
+                  Spikes Shoes
+                </h5>
+                <div class="d-flex gap-5 mt-2">
+                  <a
+                    href="#"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Enquiry</a
+                  >
+                  <a
+                    href="spikes.html"
+                    class="px-3 py-3"
+                    style="
+                      border: 2px solid transparent;
+                      border-radius: 8px;
+                      background-image: linear-gradient(#fff, #fff),
+                        var(--gradient);
+                      background-origin: border-box;
+                      background-clip: padding-box, border-box;
+                      color: black;
+                      text-decoration: none;
+                    "
+                    >Details</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--   Products End -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
